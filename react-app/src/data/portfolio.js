@@ -5,7 +5,8 @@ export const personal = {
     coords: '22°54\'S 43°12\'W',
     email: 'ml.candido2014@gmail.com',
     phone: '21 96482-0496',
-    linkedin: 'linkedin.com/in/marcelobrasiliense'
+    linkedin: 'linkedin.com/in/marcelobrasiliense',
+    github: 'github.com/Marcelo-Brasiliense-RJ'
 };
 
 export const expertise = [
@@ -127,36 +128,175 @@ export const experience = [
     }
 ];
 
+import p1 from '../assets/projects/p1.png';
+import p1_1 from '../assets/projects/p1_1.jpeg';
+
+import p2 from '../assets/projects/p2.png';
+import p2_1 from '../assets/projects/p2_1.png';
+import p2_2 from '../assets/projects/p2_2.jpeg';
+import p2_3 from '../assets/projects/p2_3.jpeg';
+
+import p3 from '../assets/projects/p3.png';
+import p3_1 from '../assets/projects/p3_1.png';
+import p3_2 from '../assets/projects/p3_2.png';
+import p3_3 from '../assets/projects/p3_3.png';
+import p3_4 from '../assets/projects/p3_4.png';
+
+import p4 from '../assets/projects/p4.png';
+import p4_1 from '../assets/projects/p4_1.jpeg';
+import p4_2 from '../assets/projects/p4_2.png';
+import p4_3 from '../assets/projects/p4_3.jpeg';
+
+import p5 from '../assets/projects/p5.png';
+import p5_1 from '../assets/projects/p5_1.png';
+import p5_2 from '../assets/projects/p5_2.png';
+import p5_3 from '../assets/projects/p5_3.png';
+
 export const projects = [
     {
         id: 'p1',
-        title: 'Gestão de Portfólio de Tecnologia e IA',
-        tags: ['n8n', 'Make', 'Power Automate', 'IA'],
-        desc: 'Implementação de automações end-to-end com agentes autônomos e LLMs para análises e validações financeiras. Integrações via API entre múltiplos sistemas.',
-        year: '2025',
-        emoji: '🧠',
-        image: null,
-        githubUrl: 'https://github.com/Marcelo-Brasiliense-IRKO'
+        title: 'Arquitetura de Validação e Correção de Dados',
+        fullTitle: 'Arquitetura de Validação e Correção de Dados entre Excel (200k+ registros) e PostgreSQL',
+        tags: ['PostgreSQL', 'n8n', 'Excel', 'JavaScript'],
+        desc: 'Reconciliação e saneamento automatizado de dados entre SharePoint e PostgreSQL com n8n.',
+        detailedDesc: 'Projeto desenvolvido para reconciliação e saneamento automatizado de dados entre planilha hospedada no SharePoint (Excel com mais de 200 mil registros) e base estruturada em PostgreSQL, utilizando n8n como motor de orquestração. A solução foi arquitetada para executar a comparação entre as duas fontes de dados, identificar divergências com base em regras de negócio e aplicar tratativas controladas diretamente no banco.',
+        deliverables: [
+            'Integração com SharePoint para leitura da planilha',
+            'Conexão estruturada com PostgreSQL',
+            'Processamento de grande volume de registros (+200k)',
+            'Validação cruzada entre Excel e banco de dados',
+            'Identificação automática de inconsistências',
+            'Execução de atualizações e correções controladas',
+            'Registro de logs e controle de execução'
+        ],
+        outcomes: [
+            'Redução significativa do tempo de validação manual',
+            'Eliminação de divergências recorrentes',
+            'Melhoria da integridade e organização do banco de dados',
+            'Estrutura escalável para futuras reconciliações automatizadas'
+        ],
+        date: 'Fevereiro 2026',
+        year: '2026',
+        emoji: '🗄️',
+        image: p1_1,
+        gallery: [p1],
+        tools: ['Microsoft Excel', 'PostgresSQL', 'Microsoft Sharepoint', 'JavaScript', 'Estruturação de Dados'],
+        githubUrl: 'https://github.com/Marcelo-Brasiliense-RJ'
     },
     {
         id: 'p2',
-        title: 'Automação Contábil & Predição',
-        tags: ['Python', 'Pandas', 'Java'],
-        desc: 'Aplicação de Inteligência Artificial para análise preditiva e desenvolvimento de integrações. Apuração estratégica de atributos e relatórios gerenciais.',
-        year: '2024',
-        emoji: '🤖',
-        image: null,
-        githubUrl: 'https://github.com/Marcelo-Brasiliense-IRKO'
+        title: 'Automação Financeira End-to-End',
+        fullTitle: 'Automação Financeira End-to-End com Python + n8n + Integração via API | Integração e Escalabilidade',
+        tags: ['Python', 'n8n', 'API', 'Financeiro'],
+        desc: 'Eliminação de tarefas manuais em rotinas financeiras com Python e n8n.',
+        detailedDesc: 'Projeto de automação end-to-end desenvolvido para eliminar tarefas manuais em rotinas financeiras e operacionais, aumentando eficiência e reduzindo retrabalho. A solução foi estruturada utilizando Python e n8n para orquestração de fluxos automatizados, integração entre sistemas via API, validação automática de dados e geração programada de relatórios.',
+        deliverables: [
+            'Integração entre múltiplos sistemas via API',
+            'Automação de validação e tratamento de dados',
+            'Geração automática de relatórios financeiros',
+            'Estruturação de logs e controle de execução',
+            'Monitoramento de falhas e tratamento de exceções'
+        ],
+        outcomes: [
+            'Escalabilidade e confiabilidade nos processos',
+            'Redução significativa do tempo operacional',
+            'Maior controle e previsibilidade financeira'
+        ],
+        date: 'Agosto 2025',
+        year: '2025',
+        emoji: '💰',
+        image: p2,
+        gallery: [p2_1, p2_2, p2_3],
+        tools: ['Python', 'Data Analyst (Python)', 'API', 'Análise Financeira', 'Microsoft Flow'],
+        githubUrl: 'https://github.com/Marcelo-Brasiliense-RJ'
     },
     {
         id: 'p3',
-        title: 'Dashboards C-Level & Conciliações',
-        tags: ['Power BI', 'DAX', 'SQL'],
-        desc: 'Desenvolvimento de painéis gerenciais focados em redução de custos operacionais e validação de retenções tributárias.',
-        year: '2023',
+        title: 'Dashboard Executivo Integrado',
+        fullTitle: 'Dashboard Executivo Integrado (Financeiro, Operacional e Comercial) – Power BI',
+        tags: ['Power BI', 'DAX', 'SQL', 'Dashboards'],
+        desc: 'Consolidação de indicadores estratégicos em um painel automatizado no Power BI.',
+        detailedDesc: 'Projeto de desenvolvimento de Dashboard Executivo Integrado para consolidação de indicadores financeiros, operacionais e comerciais em uma única estrutura analítica. O objetivo foi transformar múltiplas bases descentralizadas em um painel estratégico automatizado, com atualização dinâmica e foco em tomada de decisão.',
+        deliverables: [
+            'Consolidação de +12 KPIs estratégicos (EBITDA, Receita, Fluxo de Caixa, etc)',
+            'Redução de 65% no tempo de consolidação de relatórios',
+            'Estruturação de modelagem relacional para múltiplas áreas',
+            'Implementação de +20 métricas DAX avançadas',
+            'Análise de Meta vs Realizado em tempo real',
+            'Dashboard segmentado por unidade, período e região',
+            'Visualização de tendências YoY e crescimento mensal'
+        ],
+        outcomes: [
+            'Centralização de informações estratégicas',
+            'Eliminação de controles manuais em planilhas',
+            'Aumento da visibilidade financeira e operacional',
+            'Apoio direto à tomada de decisão executiva'
+        ],
+        date: 'Fevereiro 2024',
+        year: '2024',
         emoji: '📊',
-        image: null,
-        githubUrl: 'https://github.com/Marcelo-Brasiliense-IRKO'
+        image: p3,
+        gallery: [p3_1, p3_2, p3_3, p3_4],
+        tools: ['Power BI', 'Estruturação de Dados', 'Modelagem de Dados', 'Análise Financeira'],
+        githubUrl: 'https://github.com/Marcelo-Brasiliense-RJ'
+    },
+    {
+        id: 'p4',
+        title: 'Inteligência Gerencial em Excel',
+        fullTitle: 'Sistema de Inteligência Gerencial Automatizado em Excel – ETL com Power Query',
+        tags: ['Excel', 'Power Query', 'ETL', 'Data Modeling'],
+        desc: 'Arquitetura de dados automatizada para Aurora Capital com ETL em Power Query.',
+        detailedDesc: 'Projeto desenvolvido para a Aurora Capital com foco na estruturação de uma arquitetura de dados automatizada em Excel, utilizando Power Query como camada de ETL para consolidação e tratamento inteligente de múltiplas fontes de dados financeiros. A solução eliminou processos manuais recorrentes e padronizou layouts distintos.',
+        deliverables: [
+            'Extração e tratamento automatizado de documentos',
+            'Padronização e higienização de dados',
+            'Consolidação dinâmica de múltiplas fontes',
+            'Modelagem estruturada para análise gerencial',
+            'Dashboard executivo integrado ao modelo',
+            'Atualização com apenas um clique'
+        ],
+        outcomes: [
+            'Redução de 75% no tempo de consolidação',
+            'Eliminação de retrabalho manual',
+            'Aumento significativo da confiabilidade dos dados',
+            'Estrutura escalável e preparada para expansão'
+        ],
+        date: 'Maio 2025',
+        year: '2025',
+        emoji: '📈',
+        image: p4,
+        gallery: [p4_1, p4_2, p4_3],
+        tools: ['Microsoft Excel', 'Modelagem de Dados', 'Estruturação de Dados', 'Análise Financeira'],
+        githubUrl: 'https://github.com/Marcelo-Brasiliense-RJ'
+    },
+    {
+        id: 'p5',
+        title: 'Monitoramento de Chamados Bitrix24',
+        fullTitle: 'Sistema de Monitoramento Inteligente de Chamados (Bitrix24 (API) + n8n + Microsoft Teams)',
+        tags: ['API', 'n8n', 'Teams', 'JavaScript'],
+        desc: 'Gestão automatizada de tickets com integração em tempo real ao Microsoft Teams.',
+        detailedDesc: 'Projeto de arquitetura e implementação de sistema automatizado para monitoramento e gestão de chamados no Bitrix24, com integração em tempo real ao Microsoft Teams. A solução permite notificação automática, controle de SLA e acompanhamento inteligente de tickets via Adaptive Cards.',
+        deliverables: [
+            'Integração completa com API do Bitrix24',
+            'Envio de chamados via Adaptive Cards no Teams',
+            'Link direto para acesso ao chamado no card',
+            'Monitoramento de SLA com alertas automáticos',
+            'Controle condicional de status',
+            'Persistência e registro de logs para auditoria'
+        ],
+        outcomes: [
+            'Redução de 65% no tempo médio de resposta',
+            'Diminuição de 70% em chamados não tratados',
+            'Eliminação de monitoramento manual dentro do CRM',
+            'Maior controle operacional sobre prazos'
+        ],
+        date: 'Janeiro 2026',
+        year: '2026',
+        emoji: '🎫',
+        image: p5,
+        gallery: [p5_1, p5_2, p5_3],
+        tools: ['JavaScript', 'Estruturação de Dados', 'PostgresSQL', 'Microsoft Project', 'API'],
+        githubUrl: 'https://github.com/Marcelo-Brasiliense-RJ'
     }
 ];
 

@@ -81,7 +81,7 @@ export default function About() {
                         {/* Estatísticas / Conquistas */}
                         <div className="about-stats-container about-reveal-block reveal-block">
                             <div className="about-stat-item">
-                                <span className="about-stat-num">10+</span>
+                                <span className="about-stat-num">6+</span>
                                 <span className="about-stat-label">Anos de Experiência</span>
                             </div>
                             <div className="about-stat-item">

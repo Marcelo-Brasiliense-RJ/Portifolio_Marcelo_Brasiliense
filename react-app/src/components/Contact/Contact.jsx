@@ -25,15 +25,39 @@ export default function Contact() {
         return () => matchMedia.revert();
     }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setBtnText('Enviado! ✓');
-        setIsSuccess(true);
-        setTimeout(() => {
-            setBtnText('Enviar mensagem →');
-            setIsSuccess(false);
-            e.target.reset();
-        }, 2500);
+        const form = e.target;
+        const data = new FormData(form);
+
+        setBtnText('Enviando...');
+
+        try {
+            const response = await fetch('https://formspree.io/f/xqenkavl', {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setBtnText('Enviado! ✓');
+                setIsSuccess(true);
+                form.reset();
+                
+                setTimeout(() => {
+                    setBtnText('Enviar mensagem →');
+                    setIsSuccess(false);
+                }, 5000);
+            } else {
+                setBtnText('Erro ao enviar');
+                setTimeout(() => setBtnText('Enviar mensagem →'), 3000);
+            }
+        } catch (error) {
+            setBtnText('Erro de conexão');
+            setTimeout(() => setBtnText('Enviar mensagem →'), 3000);
+        }
     };
 
     return (
@@ -73,18 +97,22 @@ export default function Contact() {
                                     <span className="contact-value-v2">linkedin.com/in/marcelobrasiliense</span>
                                 </div>
                             </a>
-                            <a href="https://github.com/Marcelo-Brasiliense-IRKO" className="contact-item-v2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <a href="https://github.com/Marcelo-Brasiliense-RJ" className="contact-item-v2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                 <div className="contact-icon-v2" aria-hidden="true">gh</div>
                                 <div className="contact-text-v2">
                                     <span className="contact-label-v2">GitHub</span>
-                                    <span className="contact-value-v2">github.com/Marcelo-Brasiliense-IRKO</span>
+                                    <span className="contact-value-v2">github.com/Marcelo-Brasiliense-RJ</span>
                                 </div>
                             </a>
                         </div>
                     </div>
 
                     <div className="contact-right reveal-block" style={{ opacity: 0, transform: 'translateY(20px)' }} ref={formRef}>
-                        <form className="form" onSubmit={handleSubmit} noValidate aria-label="Formulário de contato">
+                        <form 
+                            className="form" 
+                            onSubmit={handleSubmit}
+                            aria-label="Formulário de contato"
+                        >
                             <div className="form-group">
                                 <label className="form-label" htmlFor="f-name">Nome</label>
                                 <input className="form-input" type="text" id="f-name" name="name" placeholder="Seu nome completo" required autoComplete="name" />
