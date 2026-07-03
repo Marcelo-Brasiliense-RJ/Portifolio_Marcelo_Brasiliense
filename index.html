@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcelo Brasiliense · Engenheiro de IA & Líder Técnico</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23081a33'/><circle cx='50' cy='50' r='33' fill='none' stroke='%231d4ed8' stroke-width='6'/><text x='50' y='54' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='700' fill='%233b82f6' text-anchor='middle' dominant-baseline='central'>MB</text></svg>">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet">
+<script src="portfolio-data.js"></script>
+<style>
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#ffffff}
+  ::selection{background:rgba(29,78,216,0.22);color:#0b1f3a}
+  @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes pulse-dot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.5);opacity:0.5}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  @media (max-width:900px){.arch-flow{grid-template-columns:1fr!important}.arch-flow .arch-arrow{transform:rotate(90deg);justify-self:center;padding:2px 0}}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#ffffff;--bg-alt:#f2f6fc;--navy:#081a33;--navy-2:#0d2547;--ink:#0b1f3a;--muted:#586b88;--faint:#93a2ba;--blue:#1d4ed8;--blue-bright:#3b82f6;--blue-soft:rgba(29,78,216,0.09);--line:#e5ebf5;--line-navy:#22406a;--text-navy:#eef3fc;--muted-navy:#a3b6d6;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif;--mono:'Space Mono',ui-monospace,monospace;--ease:cubic-bezier(0.22,1,0.36,1);position:relative;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;">
+
+  <div data-progress aria-hidden="true" style="position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:60;transition:width 0.1s linear;"></div>
+
+  <nav data-nav style="position:fixed;top:0;left:0;width:100%;z-index:50;border-bottom:1px solid var(--line);background:rgba(255,255,255,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow 0.3s var(--ease);">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:74px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:22px;">
+      <a href="#top" style="justify-self:start;display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);">
+        <span style="width:30px;height:30px;border:1.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:var(--blue);">MB</span>
+        <span style="font-weight:700;letter-spacing:-0.01em;font-size:0.98rem;">Marcelo Brasiliense</span>
+      </a>
+      <div style="justify-self:center;display:flex;align-items:center;gap:3px;border:1px solid var(--line);border-radius:100px;padding:3px;background:#fff;box-shadow:0 2px 10px rgba(8,26,51,0.05);">
+        <button onClick="{{ ptOn }}" style="{{ ptBtn }}">PT</button>
+        <button onClick="{{ enOn }}" style="{{ enBtn }}">EN</button>
+      </div>
+      <div style="justify-self:end;display:flex;align-items:center;gap:26px;">
+        <a href="#work" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)">{{ ui.navWork }}</a>
+        <a href="#capabilities" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)">{{ ui.navSkills }}</a>
+        <a href="#results" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)">{{ ui.navResults }}</a>
+        <a href="#experience" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)">{{ ui.navExperience }}</a>
+        <a href="#contact" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)">{{ ui.navContact }}</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="top" style="position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:120px 32px 70px;overflow:hidden;">
+    <div data-parallax="0.05" aria-hidden="true" style="position:absolute;top:-8%;left:-6%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,var(--blue-soft),transparent 68%);z-index:0;"></div>
+    <div style="max-width:1240px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;position:relative;z-index:1;">
+      <div>
+        <div data-reveal style="display:inline-flex;align-items:center;gap:11px;margin-bottom:28px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--blue);display:inline-block;animation:pulse-dot 2.4s ease-in-out infinite;"></span>
+          <span data-decrypt style="font-family:var(--mono);font-size:0.74rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);">{{ p.role }}</span>
+        </div>
+        <h1 style="font-size:clamp(2.6rem,5.4vw,5rem);font-weight:800;letter-spacing:-0.035em;line-height:1.0;margin:0 0 26px;color:var(--ink);">
+          <span data-reveal data-delay="1" style="display:block;">{{ ui.heroStatement }}</span>
+          <span data-reveal data-delay="2" style="display:inline-block;color:var(--blue);">{{ ui.heroHighlight }}</span>
+        </h1>
+        <p data-reveal data-delay="3" style="font-size:1.16rem;color:var(--muted);max-width:540px;line-height:1.6;margin:0 0 36px;">{{ ui.heroSub }}</p>
+        <div data-reveal data-delay="4" style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px;">
+          <a href="#work" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:0.95rem;padding:15px 28px;border-radius:8px;box-shadow:0 12px 34px rgba(29,78,216,0.28);transition:all 0.3s var(--ease);" style-hover="transform:translateY(-2px);filter:brightness(1.08)">{{ ui.ctaWork }} →</a>
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);text-decoration:none;font-weight:600;font-size:0.95rem;padding:15px 28px;border-radius:8px;border:1px solid var(--line);transition:all 0.3s var(--ease);" style-hover="border-color:var(--blue);color:var(--blue)">{{ ui.ctaContact }}</a>
+        </div>
+        <div style="display:flex;gap:40px;flex-wrap:wrap;">
+          <sc-for list="{{ heroStats }}" as="hs" hint-placeholder-count="3">
+            <div data-reveal data-delay="{{ $index }}" style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-size:1.9rem;font-weight:800;letter-spacing:-0.03em;color:var(--ink);">{{ hs.v }}</span>
+              <span style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);">{{ hs.l }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div data-parallax="0.06" style="position:relative;">
+        <div data-reveal data-anim="scale" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px rgba(8,26,51,0.35),0 0 0 1px var(--line);">
+          <img src="assets/photos/about-photo.png" alt="Marcelo Brasiliense" style="width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;animation:float-y 7s ease-in-out infinite;">
+        </div>
+        <div data-reveal data-delay="3" style="position:absolute;left:-22px;bottom:34px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;box-shadow:0 20px 50px rgba(8,26,51,0.18);">
+          <div style="font-size:1.7rem;font-weight:800;color:var(--blue);letter-spacing:-0.03em;line-height:1;">{{ heroStats.0.v }}</div>
+          <div style="font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:4px;">{{ heroStats.0.l }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div aria-hidden="true" style="position:relative;z-index:1;background:var(--navy);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);">
+    <div style="display:flex;width:max-content;animation:marquee-scroll 30s linear infinite;">
+      <sc-for list="{{ techMarquee }}" as="t" hint-placeholder-count="28"><span style="display:inline-flex;align-items:center;gap:24px;padding:18px 26px;font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-navy);white-space:nowrap;">{{ t }}<span style="width:5px;height:5px;background:var(--blue-bright);transform:rotate(45deg);display:inline-block;"></span></span></sc-for>
+    </div>
+  </div>
+
+  <section id="about" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.4fr;gap:70px;align-items:center;">
+      <div data-projcard style="position:relative;border-radius:18px;border:1px solid var(--line);transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);">
+        <div data-reveal data-anim="clipx" style="overflow:hidden;border-radius:18px;aspect-ratio:5/6;">
+          <img src="assets/photos/shot1.png" alt="Marcelo Brasiliense" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 6%;transform:scale(1.32);transform-origin:center top;">
+        </div>
+        <div style="position:absolute;top:14px;left:14px;width:48px;height:48px;border-top:2px solid var(--blue-bright);border-left:2px solid var(--blue-bright);"></div>
+        <div style="position:absolute;bottom:14px;right:14px;width:48px;height:48px;border-bottom:2px solid var(--blue-bright);border-right:2px solid var(--blue-bright);"></div>
+      </div>
+      <div>
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">01</span>{{ ui.aboutEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.08;margin:0 0 24px;color:var(--ink);">{{ ui.aboutHeading }}</h2>
+        <div data-reveal data-delay="2" style="color:var(--muted);font-size:1.06rem;line-height:1.8;display:flex;flex-direction:column;gap:16px;max-width:620px;">
+          <p style="margin:0;">{{ ui.aboutP1 }}</p>
+          <p style="margin:0;">{{ ui.aboutP2 }}</p>
+        </div>
+        <div data-reveal data-delay="3" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;">
+          <sc-for list="{{ aboutChips }}" as="ch" hint-placeholder-count="4"><span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.04em;color:var(--ink);border:1px solid var(--line);border-radius:100px;padding:7px 15px;background:var(--bg-alt);">{{ ch }}</span></sc-for>
+        </div>
+        <div data-reveal data-delay="4" style="margin-top:30px;">
+          <a href="assets/cv.pdf" download="CV_Marcelo_Brasiliense_2026.pdf" style="display:inline-flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none;font-weight:600;font-size:0.9rem;border-bottom:1.5px solid var(--blue);padding-bottom:3px;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)"><span style="font-family:'Material Symbols Outlined';font-size:1.15rem;color:var(--blue);">download</span> {{ ui.cv }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:680px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">02</span>{{ ui.capEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.capHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.capSub }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;">
+        <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="6">
+          <div data-reveal data-delay="{{ $index }}" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:15px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);" style-hover="transform:translateY(-6px);border-color:var(--blue);box-shadow:0 22px 50px rgba(8,26,51,0.12)">
+            <span style="width:52px;height:52px;border-radius:13px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:28px;">{{ c.icon }}</span>
+            <h3 style="font-size:1.2rem;font-weight:700;letter-spacing:-0.01em;margin:6px 0 0;color:var(--ink);">{{ c.title }}</h3>
+            <p style="color:var(--muted);font-size:0.94rem;line-height:1.62;margin:0;">{{ c.desc }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px;">
+              <sc-for list="{{ c.tags }}" as="tg" hint-placeholder-count="3"><span style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.04em;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 10px;">{{ tg }}</span></sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture" style="position:relative;z-index:1;padding:120px 32px;background:var(--bg-alt);border-bottom:1px solid var(--line);overflow:hidden;">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:700px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">03</span>{{ ui.archEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.archHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.archSub }}</p>
+      </div>
+      <div class="arch-flow" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;">
+        <sc-for list="{{ architecture }}" as="st" hint-placeholder-count="5">
+          <div data-reveal data-delay="{{ $index }}" class="arch-node" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 18px;display:flex;flex-direction:column;gap:11px;transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease);" style-hover="transform:translateY(-6px);box-shadow:0 22px 50px rgba(8,26,51,0.12);border-color:var(--blue)">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="width:46px;height:46px;border-radius:12px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:25px;">{{ st.icon }}</span>
+              <span style="font-family:var(--mono);font-size:0.72rem;color:var(--faint);letter-spacing:0.06em;">{{ st.num }}</span>
+            </div>
+            <div style="font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:-0.01em;">{{ st.stage }}</div>
+            <div style="font-size:0.82rem;color:var(--muted);line-height:1.45;">{{ st.desc }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px;">
+              <sc-for list="{{ st.items }}" as="it" hint-placeholder-count="3"><span style="font-family:var(--mono);font-size:0.66rem;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 8px;">{{ it }}</span></sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ st.notLast }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" class="arch-arrow" style="display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Material Symbols Outlined';font-size:24px;">arrow_forward</span></sc-if>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="aiml" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:720px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">04</span>{{ ui.aimlEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.aimlHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.aimlSub }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:18px;">
+        <sc-for list="{{ aiml }}" as="a" hint-placeholder-count="11">
+          <div data-reveal data-delay="{{ $index }}" style="background:#fff;border:1px solid var(--line);border-radius:15px;padding:26px;display:flex;flex-direction:column;gap:13px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);" style-hover="transform:translateY(-5px);border-color:var(--blue);box-shadow:0 20px 46px rgba(8,26,51,0.12)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+              <span style="width:46px;height:46px;border-radius:12px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:25px;">{{ a.icon }}</span>
+              <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);">{{ a.cat }}</span>
+            </div>
+            <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-0.01em;margin:2px 0 0;color:var(--ink);">{{ a.title }}</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
+              <sc-for list="{{ a.terms }}" as="tm" hint-placeholder-count="5"><span style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.02em;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 9px;">{{ tm }}</span></sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:640px;margin-bottom:52px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">05</span>{{ ui.workEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0;color:var(--ink);">{{ ui.workHeading }}</h2>
+      </div>
+      <sc-if value="{{ featured }}" hint-placeholder-val="{{ false }}">
+        <article data-projcard data-reveal onClick="{{ featured.open }}" onKeyDown="{{ featured.openKey }}" tabindex="0" role="button" aria-label="{{ featured.title }}" style="position:relative;overflow:hidden;background:var(--navy);border:1px solid var(--line-navy);border-radius:20px;padding:42px;cursor:pointer;margin-bottom:22px;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;color:var(--text-navy);transition:transform 0.4s var(--ease),border-color 0.4s var(--ease);">
+          <div aria-hidden="true" style="position:absolute;top:-60px;right:-40px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.2),transparent 70%);pointer-events:none;"></div>
+          <div style="position:relative;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;border-radius:100px;"><span style="font-family:'Material Symbols Outlined';font-size:0.9rem;">bolt</span>{{ ui.featured }}</span>
+              <span style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-navy);">{{ ui.platform }}</span>
+            </div>
+            <h3 style="font-size:2rem;font-weight:800;letter-spacing:-0.025em;line-height:1.05;color:#fff;margin:0 0 14px;">{{ featured.title }}</h3>
+            <p style="color:var(--muted-navy);font-size:1.02rem;line-height:1.65;margin:0 0 22px;max-width:560px;">{{ featured.desc }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;">
+              <sc-for list="{{ featured.tags }}" as="tg" hint-placeholder-count="6"><span style="font-family:var(--mono);font-size:0.66rem;color:var(--muted-navy);border:1px solid var(--line-navy);border-radius:100px;padding:5px 11px;">{{ tg }}</span></sc-for>
+            </div>
+          </div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:18px;">
+            <sc-for list="{{ featured.metrics }}" as="mt" hint-placeholder-count="3">
+              <div style="border-left:2px solid var(--blue-bright);padding-left:16px;">
+                <div style="font-size:1.7rem;font-weight:800;color:var(--blue-bright);letter-spacing:-0.02em;line-height:1;">{{ mt.0 }}</div>
+                <div style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted-navy);margin-top:6px;">{{ mt.1 }}</div>
+              </div>
+            </sc-for>
+            <span data-arrow style="font-family:'Material Symbols Outlined';font-size:1.6rem;color:var(--blue-bright);transition:transform 0.3s var(--ease);align-self:flex-end;">arrow_outward</span>
+          </div>
+        </article>
+      </sc-if>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;">
+        <sc-for list="{{ voiceProjects }}" as="p" hint-placeholder-count="2">
+          <article data-projcard data-reveal data-delay="{{ $index }}" onClick="{{ p.open }}" onKeyDown="{{ p.openKey }}" tabindex="0" role="button" aria-label="{{ p.title }}" style="position:relative;overflow:hidden;background:var(--navy-2);border:1px solid var(--line-navy);border-radius:18px;padding:34px;cursor:pointer;display:flex;flex-direction:column;gap:15px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease);color:var(--text-navy);">
+            <div aria-hidden="true" style="position:absolute;top:-34px;right:-34px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.22),transparent 70%);pointer-events:none;"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-family:'Material Symbols Outlined';font-size:42px;color:var(--blue-bright);">graphic_eq</span>
+              <span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--muted-navy);">{{ p.num }} · {{ ui.aiVoice }}</span>
+            </div>
+            <h3 style="font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin:6px 0 0;">{{ p.title }}</h3>
+            <p style="color:var(--muted-navy);font-size:0.95rem;line-height:1.6;margin:0;">{{ p.desc }}</p>
+            <div style="display:flex;gap:28px;margin-top:6px;">
+              <sc-for list="{{ p.metrics }}" as="mt" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;"><span style="font-size:1.45rem;font-weight:800;color:var(--blue-bright);letter-spacing:-0.02em;line-height:1;">{{ mt.0 }}</span><span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted-navy);margin-top:5px;">{{ mt.1 }}</span></div></sc-for>
+            </div>
+            <div style="margin-top:auto;padding-top:22px;border-top:1px solid var(--line-navy);display:flex;justify-content:space-between;align-items:center;gap:12px;">
+              <span style="display:flex;flex-wrap:wrap;gap:7px;">
+                <sc-for list="{{ p.tags }}" as="tg" hint-placeholder-count="4"><span style="font-family:var(--mono);font-size:0.64rem;color:var(--muted-navy);border:1px solid var(--line-navy);border-radius:100px;padding:4px 10px;">{{ tg }}</span></sc-for>
+              </span>
+              <span data-arrow style="font-family:'Material Symbols Outlined';font-size:1.5rem;color:var(--blue-bright);transition:transform 0.3s var(--ease);flex-shrink:0;">arrow_outward</span>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;">
+        <sc-for list="{{ dataProjects }}" as="p" hint-placeholder-count="5">
+          <article data-projcard data-reveal data-delay="{{ $index }}" onClick="{{ p.open }}" onKeyDown="{{ p.openKey }}" tabindex="0" role="button" aria-label="{{ p.title }}" style="overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;cursor:pointer;display:flex;flex-direction:column;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);">
+            <div style="overflow:hidden;aspect-ratio:16/10;background:var(--bg-alt);border-bottom:1px solid var(--line);">
+              <sc-if value="{{ p.image }}" hint-placeholder-val="{{ false }}"><img data-media data-src="{{ p.image }}" alt="{{ p.title }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s var(--ease);"></sc-if>
+            </div>
+            <div style="padding:24px;display:flex;flex-direction:column;gap:11px;flex:1;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.1em;color:var(--blue);">{{ p.num }}</span>
+                <span style="font-family:var(--mono);font-size:0.7rem;color:var(--faint);">{{ p.date }}</span>
+              </div>
+              <h3 style="font-size:1.2rem;font-weight:700;letter-spacing:-0.01em;margin:0;color:var(--ink);">{{ p.title }}</h3>
+              <p style="color:var(--muted);font-size:0.9rem;line-height:1.55;margin:0;">{{ p.desc }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px;">
+                <sc-for list="{{ p.tags }}" as="tg" hint-placeholder-count="4"><span style="font-family:var(--mono);font-size:0.64rem;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:4px 10px;">{{ tg }}</span></sc-for>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" style="position:relative;z-index:1;padding:130px 32px;background:var(--navy);color:var(--text-navy);overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(59,130,246,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(130% 105% at 82% 0%,#000,transparent 72%);mask-image:radial-gradient(130% 105% at 82% 0%,#000,transparent 72%);"></div>
+    <div data-parallax="0.05" aria-hidden="true" style="position:absolute;top:-24%;right:-6%;width:680px;height:680px;z-index:0;background:radial-gradient(circle,rgba(59,130,246,0.17),transparent 66%);"></div>
+    <div data-parallax="0.03" aria-hidden="true" style="position:absolute;bottom:-30%;left:-8%;width:520px;height:520px;z-index:0;background:radial-gradient(circle,rgba(29,78,216,0.12),transparent 68%);"></div>
+    <div style="position:relative;z-index:2;max-width:1240px;margin:0 auto;">
+      <div style="max-width:620px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:18px;"><span style="color:var(--muted-navy);margin-right:12px;">06</span>{{ ui.resultsEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(2rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 16px;color:#fff;">{{ ui.resultsPrefix }} <span data-rotword style="color:var(--blue-bright);display:inline-block;">{{ rotWord }}</span></h2>
+        <p data-reveal data-delay="2" style="color:var(--muted-navy);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.resultsSub }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:44px 34px;">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="6">
+          <div data-reveal data-delay="{{ $index }}" style="border-top:1px solid rgba(255,255,255,0.16);padding-top:22px;">
+            <div style="font-size:clamp(2.6rem,4.2vw,3.6rem);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#fff;"><span data-count="{{ r.number }}" style="color:var(--blue-bright);">{{ r.display }}</span>{{ r.suffix }}</div>
+            <div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-navy);margin-top:12px;">{{ r.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1080px;margin:0 auto;">
+      <div style="max-width:640px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">07</span>{{ ui.expEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0;color:var(--ink);">{{ ui.expHeading }}</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ experience }}" as="e" hint-placeholder-count="3">
+          <div data-reveal data-delay="{{ $index }}" style="display:grid;grid-template-columns:160px 1fr;gap:34px;">
+            <div style="text-align:right;padding-top:2px;">
+              <div style="font-family:var(--mono);font-size:0.78rem;font-weight:700;color:var(--blue);letter-spacing:0.02em;">{{ e.date }}</div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-top:5px;">{{ e.company }}</div>
+              <div style="font-family:var(--mono);font-size:0.68rem;color:var(--faint);margin-top:2px;">{{ e.location }}</div>
+            </div>
+            <div style="position:relative;border-left:1px solid var(--line);padding:0 0 46px 34px;">
+              <span style="position:absolute;left:-7px;top:3px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:2.5px solid #fff;box-shadow:0 0 0 4px var(--blue-soft);"></span>
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                <span style="width:38px;height:38px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:21px;flex-shrink:0;">{{ e.icon }}</span>
+                <h3 style="font-size:1.24rem;font-weight:700;letter-spacing:-0.01em;margin:0;color:var(--ink);">{{ e.title }}</h3>
+              </div>
+              <p style="color:var(--muted);font-size:0.98rem;line-height:1.65;margin:0 0 18px;max-width:620px;">{{ e.context }}</p>
+              <div style="font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--faint);margin-bottom:12px;">{{ ui.deliverables }}</div>
+              <ul style="list-style:none;padding:0;margin:0 0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:9px 24px;">
+                <sc-for list="{{ e.deliverables }}" as="d" hint-placeholder-count="4"><li style="position:relative;padding-left:20px;color:var(--muted);font-size:0.9rem;line-height:1.5;"><span style="position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--blue);"></span>{{ d }}</li></sc-for>
+              </ul>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <sc-for list="{{ e.stack }}" as="s" hint-placeholder-count="5"><span style="font-family:var(--mono);font-size:0.68rem;color:var(--ink);background:var(--bg-alt);border:1px solid var(--line);border-radius:7px;padding:5px 11px;">{{ s }}</span></sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" style="position:relative;z-index:1;padding:120px 32px;background:var(--bg-alt);border-bottom:1px solid var(--line);">
+    <div style="max-width:1080px;margin:0 auto;">
+      <div style="max-width:640px;margin-bottom:52px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">08</span>{{ ui.eduEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 12px;color:var(--ink);">{{ ui.eduHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.06rem;line-height:1.6;margin:0;">{{ ui.eduDesc }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <sc-for list="{{ education }}" as="ed" hint-placeholder-count="5">
+          <div data-reveal data-delay="{{ $index }}" style="display:grid;grid-template-columns:auto 44px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-top:1px solid var(--line);transition:padding 0.3s var(--ease);" style-hover="padding-left:12px;padding-right:0">
+            <span style="font-family:var(--mono);font-size:0.82rem;color:var(--faint);">{{ ed.num }}</span>
+            <span style="width:44px;height:44px;border-radius:11px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:22px;">{{ ed.icon }}</span>
+            <div style="display:flex;flex-direction:column;gap:3px;">
+              <span style="font-size:1.08rem;font-weight:700;color:var(--ink);letter-spacing:-0.01em;">{{ ed.degree }}</span>
+              <span style="font-size:0.88rem;color:var(--muted);">{{ ed.school }}</span>
+            </div>
+            <span style="font-family:var(--mono);font-size:0.8rem;color:var(--blue);font-weight:700;">{{ ed.date }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="position:relative;z-index:1;padding:120px 32px;background:var(--navy);color:var(--text-navy);">
+    <div style="max-width:720px;margin:0 auto;">
+      <div>
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:18px;"><span style="color:var(--muted-navy);margin-right:12px;">09</span>{{ ui.contactEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:800;letter-spacing:-0.03em;line-height:1.0;margin:0 0 22px;color:#fff;">{{ ui.contactHeadingA }}<br><span style="color:var(--blue-bright);">{{ ui.contactHeadingB }}</span></h2>
+        <p data-reveal data-delay="2" style="color:var(--muted-navy);font-size:1.08rem;line-height:1.7;max-width:420px;margin:0 0 34px;">{{ ui.contactSub }}</p>
+        <div data-reveal data-delay="3" style="display:flex;flex-direction:column;">
+          <a href="mailto:{{ p.email }}" style="display:flex;align-items:center;gap:15px;text-decoration:none;padding:15px 0;border-top:1px solid var(--line-navy);transition:padding 0.3s var(--ease);" style-hover="padding-left:8px"><span style="width:40px;height:40px;border:1px solid var(--line-navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Material Symbols Outlined';font-size:1.1rem;">mail</span><span style="display:flex;flex-direction:column;"><span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);font-family:var(--mono);">Email</span><span style="color:#fff;font-size:0.95rem;font-weight:600;">{{ p.email }}</span></span></a>
+          <a href="https://wa.me/5521964820496" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:15px;text-decoration:none;padding:15px 0;border-top:1px solid var(--line-navy);transition:padding 0.3s var(--ease);" style-hover="padding-left:8px"><span style="width:40px;height:40px;border:1px solid var(--line-navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Material Symbols Outlined';font-size:1.1rem;">chat</span><span style="display:flex;flex-direction:column;"><span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);font-family:var(--mono);">WhatsApp</span><span style="color:#fff;font-size:0.95rem;font-weight:600;">{{ p.whatsapp }}</span></span></a>
+          <a href="{{ p.linkedin }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:15px;text-decoration:none;padding:15px 0;border-top:1px solid var(--line-navy);border-bottom:1px solid var(--line-navy);transition:padding 0.3s var(--ease);" style-hover="padding-left:8px"><span style="width:40px;height:40px;border:1px solid var(--line-navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:var(--mono);font-size:0.72rem;font-weight:700;">in</span><span style="display:flex;flex-direction:column;"><span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);font-family:var(--mono);">LinkedIn</span><span style="color:#fff;font-size:0.95rem;font-weight:600;">in/marcelobrasiliense</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;background:var(--navy);border-top:1px solid var(--line-navy);padding:34px 32px;">
+    <div style="max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <span style="font-family:var(--mono);font-size:0.72rem;color:var(--muted-navy);letter-spacing:0.05em;">© 2026 · Marcelo Brasiliense · {{ ui.footerTag }}</span>
+      <div style="display:flex;gap:24px;">
+        <a href="{{ p.upwork }}" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:0.72rem;color:var(--muted-navy);text-decoration:none;letter-spacing:0.05em;transition:color 0.25s var(--ease);" style-hover="color:var(--blue-bright)">Upwork</a>
+        <a href="{{ p.github }}" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:0.72rem;color:var(--muted-navy);text-decoration:none;letter-spacing:0.05em;transition:color 0.25s var(--ease);" style-hover="color:var(--blue-bright)">GitHub</a>
+        <a href="{{ p.linkedin }}" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:0.72rem;color:var(--muted-navy);text-decoration:none;letter-spacing:0.05em;transition:color 0.25s var(--ease);" style-hover="color:var(--blue-bright)">LinkedIn</a>
+        <a href="#top" style="font-family:var(--mono);font-size:0.72rem;color:var(--muted-navy);text-decoration:none;letter-spacing:0.05em;transition:color 0.25s var(--ease);" style-hover="color:var(--blue-bright)">↑ Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ modal }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeProject }}" style="position:fixed;inset:0;background:rgba(4,10,20,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;">
+      <div onClick="{{ stop }}" style="background:#0b1a30;width:100%;max-width:1120px;height:88vh;border:1px solid var(--line-navy);border-radius:14px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr 1fr;box-shadow:0 50px 120px rgba(0,0,0,0.6);color:var(--text-navy);">
+        <button onClick="{{ closeProject }}" aria-label="Close" style="position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,0.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:all 0.3s var(--ease);" style-hover="background:var(--blue);transform:rotate(90deg)"><span style="font-family:'Material Symbols Outlined';">close</span></button>
+        <div style="background:#071528;border-right:1px solid var(--line-navy);padding:44px;overflow-y:auto;">
+          <sc-if value="{{ modal.image }}" hint-placeholder-val="{{ false }}">
+            <img data-src="{{ modal.image }}" alt="{{ modal.title }}" style="width:100%;border-radius:8px;border:1px solid var(--line-navy);margin-bottom:22px;">
+            <div style="display:flex;flex-direction:column;gap:22px;">
+              <sc-for list="{{ modal.gallery }}" as="g" hint-placeholder-count="0"><sc-if value="{{ g }}" hint-placeholder-val="{{ false }}"><img data-src="{{ g }}" alt="Screenshot" style="width:100%;border-radius:8px;border:1px solid var(--line-navy);"></sc-if></sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ modal.showMetrics }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:18px;height:100%;justify-content:center;">
+              <span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--blue-bright);">{{ modal.panelLabel }}</span>
+              <sc-for list="{{ modal.metrics }}" as="mt" hint-placeholder-count="3"><div style="border:1px solid var(--line-navy);border-radius:12px;padding:22px 24px;background:linear-gradient(160deg,var(--navy-2),transparent);"><div style="font-size:2.4rem;font-weight:800;color:var(--blue-bright);letter-spacing:-0.02em;line-height:1;">{{ mt.0 }}</div><div style="color:var(--muted-navy);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.12em;margin-top:6px;">{{ mt.1 }}</div></div></sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;flex-direction:column;overflow-y:auto;padding:52px 46px;">
+          <span style="font-family:var(--mono);font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px;">{{ modal.date }} · {{ modal.role }}</span>
+          <h2 style="font-size:1.9rem;font-weight:800;letter-spacing:-0.02em;line-height:1.12;margin:0 0 22px;color:#fff;">{{ modal.fullTitle }}</h2>
+          <p style="color:var(--muted-navy);font-size:1.02rem;line-height:1.7;margin:0 0 32px;">{{ modal.detailedDesc }}</p>
+          <sc-if value="{{ modal.arch }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-bottom:30px;">
+              <h4 style="font-family:var(--mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);margin:0 0 14px;">{{ ui.archModalTitle }}</h4>
+              <div style="position:relative;border:1px solid var(--line-navy);border-radius:16px;background:linear-gradient(180deg,#0b1f3a,#071528);padding:22px;overflow:hidden;">
+                <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.06) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(130% 90% at 15% 0%,#000,transparent 78%);mask-image:radial-gradient(130% 90% at 15% 0%,#000,transparent 78%);pointer-events:none;"></div>
+                <div style="position:relative;display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;background:rgba(59,130,246,0.12);border:1px solid var(--line-navy);border-radius:100px;padding:6px 13px;">
+                  <span style="font-family:'Material Symbols Outlined';font-size:15px;color:var(--blue-bright);">account_tree</span>
+                  <span style="font-family:var(--mono);font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue-bright);">{{ modal.arch.label }}</span>
+                </div>
+                <div style="position:relative;display:flex;flex-direction:column;">
+                  <sc-for list="{{ modal.arch.nodes }}" as="n" hint-placeholder-count="5">
+                    <div data-archnode style="display:flex;gap:14px;">
+                      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:46px;">
+                        <span style="width:46px;height:46px;border-radius:13px;background:rgba(59,130,246,0.13);border:1px solid var(--blue-bright);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Material Symbols Outlined';font-size:23px;box-shadow:0 4px 16px rgba(59,130,246,0.20);">{{ n.i }}</span>
+                        <sc-if value="{{ n.notLast }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="flex:1;width:2px;min-height:20px;margin:5px 0;background:linear-gradient(var(--blue-bright),rgba(59,130,246,0.18));"></span></sc-if>
+                      </div>
+                      <div style="flex:1;background:#0d2547;border:1px solid var(--line-navy);border-radius:11px;padding:12px 15px;margin-bottom:12px;">
+                        <span style="font-size:0.96rem;font-weight:700;color:#fff;display:block;">{{ n.t }}</span>
+                        <span style="font-size:0.8rem;color:var(--muted-navy);">{{ n.s }}</span>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ modal.arch.note }}" hint-placeholder-val="{{ false }}">
+                  <div style="position:relative;margin-top:4px;background:rgba(59,130,246,0.08);border:1px solid var(--line-navy);border-radius:11px;padding:13px 15px;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'Material Symbols Outlined';font-size:1.05rem;color:var(--blue-bright);flex-shrink:0;">tips_and_updates</span><span style="font-size:0.82rem;color:var(--text-navy);line-height:1.5;">{{ modal.arch.note }}</span></div>
+                </sc-if>
+              </div>
+            </div>
+          </sc-if>
+          <div style="margin-bottom:30px;">
+            <h4 style="font-family:var(--mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);margin:0 0 14px;">{{ ui.deliverables }}</h4>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+              <sc-for list="{{ modal.deliverables }}" as="d" hint-placeholder-count="5"><li style="position:relative;padding-left:22px;color:var(--muted-navy);font-size:0.94rem;line-height:1.5;"><span style="position:absolute;left:0;top:9px;width:9px;height:1px;background:var(--blue-bright);"></span>{{ d }}</li></sc-for>
+            </ul>
+          </div>
+          <div style="margin-bottom:30px;">
+            <h4 style="font-family:var(--mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);margin:0 0 14px;">{{ ui.impact }}</h4>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+              <sc-for list="{{ modal.outcomes }}" as="o" hint-placeholder-count="3"><li style="position:relative;padding-left:22px;color:#fff;font-size:0.94rem;line-height:1.5;"><span style="position:absolute;left:0;color:var(--blue-bright);font-weight:700;">✓</span>{{ o }}</li></sc-for>
+            </ul>
+          </div>
+          <div style="margin-bottom:30px;">
+            <h4 style="font-family:var(--mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-navy);margin:0 0 14px;">{{ ui.toolsLabel }}</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:9px;">
+              <sc-for list="{{ modal.tools }}" as="t" hint-placeholder-count="4"><span style="border:1px solid var(--line-navy);border-radius:100px;padding:6px 14px;font-family:var(--mono);font-size:0.72rem;color:var(--muted-navy);">{{ t }}</span></sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ modal.link }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ modal.link }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:0.9rem;padding:13px 22px;border-radius:8px;align-self:flex-start;transition:all 0.3s var(--ease);" style-hover="transform:translateY(-2px);filter:brightness(1.08)">{{ ui.viewLive }}</a>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1d4ed8&quot;,&quot;options&quot;:[&quot;#1d4ed8&quot;,&quot;#2563eb&quot;,&quot;#0ea5e9&quot;,&quot;#4f46e5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;language&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;pt&quot;,&quot;en&quot;],&quot;default&quot;:&quot;pt&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  constructor(props){ super(props); let l='pt'; try{ l = props.language || localStorage.getItem('mb_lang') || 'pt'; }catch(e){ l = props.language||'pt'; } this.state = { modal:null, lang: l==='en'?'en':'pt', rotIdx:0 }; this._lastLangProp = props.language; }
+
+  setLang = (l) => { try{ localStorage.setItem('mb_lang', l); }catch(e){} this.setState({ lang:l }); };
+  openProject = (p) => { try{ document.body.style.overflow='hidden'; }catch(e){} this.setState({ modal:p }, ()=>{ setTimeout(()=>this._animateArch(), 120); }); };
+  closeProject = () => { try{ document.body.style.overflow=''; }catch(e){} this.setState({ modal:null }); };
+  stop = (e) => e.stopPropagation();
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const L = this.state.lang==='pt'?'pt':'en';
+    const ui = (window.PORTFOLIO && window.PORTFOLIO.ui) || {};
+    const t = (o,f) => (o && o[L]!=null) ? o[L] : f;
+    const f = e.target; const b = f.querySelector('[data-submit]');
+    if(b) b.textContent = t(ui.sending,'Sending…');
+    setTimeout(()=>{ if(b){ b.textContent=t(ui.sent,'Message sent ✓'); b.style.background='#1d4ed8'; b.style.color='#fff'; } f.reset(); setTimeout(()=>{ if(b){ b.textContent=t(ui.send,'Send message →'); b.style.background=''; b.style.color=''; } },4500); },900);
+  };
+
+  hexToRgb(h){ const m=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h||''); return m?[parseInt(m[1],16),parseInt(m[2],16),parseInt(m[3],16)].join(','):null; }
+  applyTheme(){ const r=this.rootRef.current; if(!r) return; const a=this.props.accent; if(a){ r.style.setProperty('--blue',a); const g=this.hexToRgb(a); if(g){ r.style.setProperty('--blue-soft',`rgba(${g},0.09)`); } } }
+
+  animateCount(el){ const t=parseFloat(el.dataset.count)||0; const d=1700,s=performance.now(); const step=(n)=>{ const k=Math.min(1,(n-s)/d); const e=1-Math.pow(1-k,3); el.textContent=Math.round(t*e).toLocaleString('en-US'); if(k<1) requestAnimationFrame(step); else el.textContent=Math.round(t).toLocaleString('en-US'); }; requestAnimationFrame(step); }
+
+  _prep(){
+    const root=this.rootRef.current; if(!root) return;
+    const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    root.querySelectorAll('[data-reveal]').forEach(el=>{
+      if(el._rev) return; el._rev=true;
+      if(rm){ el._shown=true; return; }
+      const a=el.dataset.anim||'up';
+      el.style.transition='opacity .85s var(--ease), transform .95s var(--ease), clip-path 1.05s cubic-bezier(.76,0,.24,1)';
+      el.style.transitionDelay=(parseFloat(el.dataset.delay||0)*0.09)+'s';
+      el.style.willChange='opacity, transform';
+      if(a==='scale'){ el.style.opacity='0'; el.style.transform='scale(0.93)'; }
+      else if(a==='clipx'){ el.style.clipPath='inset(0 100% 0 0)'; }
+      else { el.style.opacity='0'; el.style.transform='translateY(32px)'; }
+    });
+  }
+  _reveal(el){
+    if(!el||el._shown) return; el._shown=true;
+    const a=el.dataset.anim||'up';
+    const delayMs=(parseFloat(el.dataset.delay||0)*90);
+    let from, to;
+    if(a==='scale'){ from={opacity:0, transform:'scale(0.94)'}; to={opacity:1, transform:'scale(1)'}; }
+    else if(a==='clipx'){ from={opacity:1, clipPath:'inset(0 100% 0 0)'}; to={opacity:1, clipPath:'inset(0 0 0 0)'}; }
+    else { from={opacity:0, transform:'translateY(42px)'}; to={opacity:1, transform:'translateY(0)'}; }
+    try{ if(el.getAnimations) el.getAnimations().forEach(an=>an.cancel()); }catch(e){}
+    el.style.opacity='1'; el.style.transform='none'; el.style.clipPath='none';
+    try{ el.animate([from,to],{duration:900, delay:delayMs, easing:'cubic-bezier(0.22,1,0.36,1)', fill:'both'}); }catch(e){}
+    const pin=()=>{ try{ if(el.getAnimations) el.getAnimations().forEach(an=>an.cancel()); }catch(e){} el.style.opacity='1'; el.style.transform='none'; el.style.clipPath='none'; };
+    setTimeout(pin, delayMs+1150);
+  }
+  _revealInView(){
+    const root=this.rootRef.current; if(!root) return;
+    const h=window.innerHeight||800;
+    root.querySelectorAll('[data-reveal]').forEach(el=>{
+      if(el._shown) return;
+      const r=el.getBoundingClientRect();
+      if(r.top < h*0.94 && r.bottom > -60) this._reveal(el);
+    });
+  }
+
+  _bindHovers(){
+    const root=this.rootRef.current; if(!root) return;
+    root.querySelectorAll('[data-projcard]').forEach(card=>{
+      if(card._bound) return; card._bound=true;
+      const media=card.querySelector('[data-media]'); const arrow=card.querySelector('[data-arrow]');
+      const dark = card.style.background && card.style.background.indexOf('navy')>-1;
+      card.addEventListener('mouseenter',()=>{ card.style.borderColor='var(--blue)'; card.style.transform='translateY(-5px)'; card.style.boxShadow='0 24px 55px rgba(8,26,51,0.16)'; if(media)media.style.transform='scale(1.06)'; if(arrow)arrow.style.transform='translate(4px,-4px)'; });
+      card.addEventListener('mouseleave',()=>{ card.style.borderColor=''; card.style.transform=''; card.style.boxShadow=''; if(media)media.style.transform=''; if(arrow)arrow.style.transform=''; });
+    });
+    const rh=root.querySelector('[data-decrypt]');
+    if(rh && !rh._decBound){ rh._decBound=true; rh.style.cursor='default'; rh.addEventListener('mouseenter',()=>this._decryptRole()); }
+  }
+
+  _animateArch(){
+    const root=this.rootRef.current; if(!root) return;
+    const rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let tries=0;
+    const run=()=>{
+      if(!this.state.modal) return;
+      const nodes=[...root.querySelectorAll('[data-archnode]')];
+      if(!nodes.length){ if(tries++<25) setTimeout(run,40); return; }
+      nodes.forEach((el,i)=>{ if(rm){ el.style.opacity='1'; return; } try{ el.animate([{opacity:0,transform:'translateX(-18px)'},{opacity:1,transform:'translateX(0)'}],{duration:540,delay:70*i,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'both'}); }catch(e){} });
+    };
+    run();
+  }
+  _blurReveal(){
+    const root=this.rootRef.current; if(!root) return;
+    const rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches; if(rm) return;
+    const h=window.innerHeight||800;
+    const els=[...root.querySelectorAll('[data-reveal]')].filter(el=>{ const r=el.getBoundingClientRect(); return r.top<h*0.97 && r.bottom>36; });
+    els.forEach((el,i)=>{
+      try{ if(el.getAnimations) el.getAnimations().forEach(a=>a.cancel()); }catch(e){}
+      el.style.opacity='1'; el.style.transform='none'; el.style.clipPath='none'; el.style.filter='none';
+      try{ el.animate([{opacity:0,filter:'blur(12px)',transform:'translateY(10px)'},{opacity:0.55,filter:'blur(5px)',transform:'translateY(4px)'},{opacity:1,filter:'blur(0px)',transform:'translateY(0)'}],{duration:660,delay:i*45,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'both'}); }catch(e){}
+      setTimeout(()=>{ el.style.filter='none'; el.style.opacity='1'; el.style.transform='none'; }, i*45+760);
+    });
+  }
+  _decryptRole(){
+    const root=this.rootRef.current; if(!root) return;
+    const host=root.querySelector('[data-decrypt]'); if(!host) return;
+    const el=host.querySelector('.sc-interp')||host;
+    const target=(el.textContent||'').trim(); if(!target) return;
+    const rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(rm){ el.textContent=target; return; }
+    const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&/·';
+    clearInterval(el._dec);
+    let frame=0; const speed=1.7;
+    el._dec=setInterval(()=>{
+      frame++;
+      const revealed=Math.floor(frame/speed);
+      let out='';
+      for(let i=0;i<target.length;i++){ const c=target[i]; if(c===' '){ out+=' '; continue; } out += (i<revealed) ? c : chars[Math.floor(Math.random()*chars.length)]; }
+      el.textContent=out;
+      if(revealed>=target.length){ clearInterval(el._dec); el.textContent=target; }
+    },34);
+  }
+
+  _hydrateImgs(){
+    const root=this.rootRef.current; if(!root) return;
+    root.querySelectorAll('img[data-src]').forEach(img=>{ const ds=img.getAttribute('data-src')||''; if(ds && ds.indexOf('{{')<0 && img.getAttribute('src')!==ds){ img.setAttribute('src', ds); } });
+  }
+  _animateRotWord(){
+    const root=this.rootRef.current; if(!root) return;
+    const el=root.querySelector('[data-rotword]'); if(!el) return;
+    const rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches; if(rm) return;
+    try{ el.animate([{opacity:0,transform:'translateY(0.45em)'},{opacity:1,transform:'translateY(0)'}],{duration:440,easing:'cubic-bezier(0.16,1,0.3,1)',fill:'both'}); }catch(e){}
+  }
+
+  componentDidMount(){
+    try{ this.applyTheme(); }catch(e){}
+    const root=this.rootRef.current; if(!root) return;
+    const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._prep();
+    this._counts=[...root.querySelectorAll('[data-count]')];
+    if(!rm) this._counts.forEach(el=>{ el.textContent='0'; }); else this._counts.forEach(el=>{ el._done=true; });
+    const nav=root.querySelector('[data-nav]');
+    const prog=root.querySelector('[data-progress]');
+    this._parallax=[...root.querySelectorAll('[data-parallax]')];
+    this._tick=()=>{
+      this._hydrateImgs();
+      const y=window.scrollY;
+      if(nav) nav.style.boxShadow = y>30 ? '0 10px 40px rgba(8,26,51,0.10)' : 'none';
+      if(prog){ const H=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(H>0?(y/H*100):0)+'%'; }
+      if(!rm){
+        this._parallax.forEach(el=>{ const f=parseFloat(el.dataset.parallax)||0; const r=el.getBoundingClientRect(); const c=r.top+r.height/2-window.innerHeight/2; el.style.transform=`translateY(${(-c*f).toFixed(1)}px)`; });
+        this._revealInView();
+        this._counts.forEach(el=>{ if(el._done) return; const r=el.getBoundingClientRect(); if(r.top < window.innerHeight*0.9 && r.bottom>0){ el._done=true; this.animateCount(el); } });
+        var rh=root.querySelector('[data-decrypt]'); if(rh){ var rr=rh.getBoundingClientRect(); var inv=rr.top<window.innerHeight*0.92 && rr.bottom>0; if(inv && !this._roleSeen){ this._roleSeen=true; this._decryptRole(); } else if(!inv && this._roleSeen){ this._roleSeen=false; } }
+      }
+    };
+    this._onScroll=this._tick;
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    window.addEventListener('resize', this._onScroll, { passive:true });
+    this._tick();
+    requestAnimationFrame(()=>{ this._tick(); requestAnimationFrame(()=>this._tick()); });
+    setTimeout(()=>this._tick(), 120); setTimeout(()=>this._tick(), 450);
+    this._bindHovers();
+    this._lastLang=this.state.lang;
+    this._lastRot=this.state.rotIdx;
+    this._rotIv=setInterval(()=>{ if(this.rootRef.current) this.setState(function(s){ return { rotIdx:(s.rotIdx||0)+1 }; }); }, 2200);
+    this._fs=setTimeout(()=>{ if(!this.rootRef.current) return; this.rootRef.current.querySelectorAll('[data-reveal]').forEach(el=>this._reveal(el)); (this._counts||[]).forEach(el=>{ if(!el._done){ el._done=true; this.animateCount(el); } }); }, 3200);
+  }
+
+  componentDidUpdate(){
+    try{
+      this.applyTheme(); this._prep(); this._bindHovers();
+      if(this.props.language && this.props.language!==this._lastLangProp){ this._lastLangProp=this.props.language; this.setState({ lang: this.props.language==='pt'?'pt':'en' }); }
+      if(this._tick) this._tick();
+      if(this.state.lang!==this._lastLang){ this._lastLang=this.state.lang; this._roleSeen=true; this._decryptRole(); this._blurReveal(); }
+      if(this.state.rotIdx!==this._lastRot){ this._lastRot=this.state.rotIdx; this._animateRotWord(); }
+    }catch(e){}
+  }
+
+  componentWillUnmount(){ if(this._onScroll){ window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); } if(this._fs) clearTimeout(this._fs); if(this._rotIv) clearInterval(this._rotIv); }
+
+  renderVals(){
+    const D = window.PORTFOLIO || {};
+    const L = this.state.lang==='pt'?'pt':'en';
+    const loc=(v)=>{ if(Array.isArray(v)) return v.map(loc); if(v && typeof v==='object'){ if('en' in v && 'pt' in v) return v[L]!=null?v[L]:v.en; const o={}; for(const k in v) o[k]=loc(v[k]); return o; } return v; };
+    const P = loc(D); const self=this;
+    const projects=(P.projects||[]).map(p=>{ const q={ ...p, isVoice:p.type==='voice' }; q.showMetrics=!q.image && Array.isArray(q.metrics) && q.metrics.length>0; q.panelLabel=q.isVoice ? ('Brasitech · '+((P.ui&&P.ui.aiVoice)||'')) : (L==='pt'?'Plataforma de IA':'AI Platform'); if(q.arch&&q.arch.nodes) q.arch={ ...q.arch, nodes:q.arch.nodes.map((n,i,a)=>({ ...n, notLast:i<a.length-1 })) }; q.open=()=>self.openProject(q); q.openKey=(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); self.openProject(q); } }; return q; });
+    const arch=(P.architecture||[]).map((a,i,arr)=>({ ...a, num:('0'+(i+1)).slice(-2), notLast: i<arr.length-1 }));
+    const rwArr=(P.ui&&P.ui.resultsWords)||[]; const rotWord=rwArr.length?rwArr[(this.state.rotIdx||0)%rwArr.length]:'';
+    const active='background:var(--blue);color:#fff;border:none;border-radius:100px;padding:6px 15px;font-family:var(--mono);font-size:0.74rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.25s var(--ease);';
+    const idle='background:transparent;color:var(--muted);border:none;border-radius:100px;padding:6px 15px;font-family:var(--mono);font-size:0.74rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.25s var(--ease);';
+    return {
+      rootRef:this.rootRef, p:P.personal||{}, ui:P.ui||{},
+      techMarquee:[...(P.techMarquee||[]),...(P.techMarquee||[])],
+      aboutChips:P.aboutChips||[], heroStats:P.heroStats||[],
+      capabilities:P.capabilities||[], architecture:arch, aiml:P.aiml||[],
+      results:P.results||[], rotWord, experience:P.experience||[], education:P.education||[], projects,
+      featured:projects.find(x=>x.type==='platform')||null,
+      voiceProjects:projects.filter(x=>x.type==='voice'), dataProjects:projects.filter(x=>x.type==='image'),
+      modal:this.state.modal, closeProject:this.closeProject, stop:this.stop, handleSubmit:this.handleSubmit,
+      enOn:()=>this.setLang('en'), ptOn:()=>this.setLang('pt'),
+      enBtn: L==='en'?active:idle, ptBtn: L==='pt'?active:idle
+    };
+  }
+}
+</script>
+</body>
+</html>
