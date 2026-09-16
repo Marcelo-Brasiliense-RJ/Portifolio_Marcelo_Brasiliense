@@ -178,12 +178,12 @@
         </article>
       </sc-if>
       <div class="r-col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;">
-        <sc-for list="{{ voiceProjects }}" as="p" hint-placeholder-count="2">
+        <sc-for list="{{ voiceProjects }}" as="p" hint-placeholder-count="7">
           <article data-projcard data-reveal data-delay="{{ $index }}" onClick="{{ p.open }}" onKeyDown="{{ p.openKey }}" tabindex="0" role="button" aria-label="{{ p.title }}" class="r-p" style="position:relative;overflow:hidden;background:var(--navy-2);border:1px solid var(--line-navy);border-radius:18px;padding:34px;cursor:pointer;display:flex;flex-direction:column;gap:15px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease);color:var(--text-navy);">
             <div aria-hidden="true" style="position:absolute;top:-34px;right:-34px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.22),transparent 70%);pointer-events:none;"></div>
             <div style="display:flex;align-items:center;justify-content:space-between;">
-              <span style="font-family:'Material Symbols Outlined';font-size:42px;color:var(--blue-bright);">graphic_eq</span>
-              <span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--muted-navy);">{{ p.num }} · {{ ui.aiVoice }}</span>
+              <span style="font-family:'Material Symbols Outlined';font-size:42px;color:var(--blue-bright);">{{ p.icon }}</span>
+              <span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--muted-navy);">{{ p.num }} · {{ p.kind }}</span>
             </div>
             <h3 style="font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin:6px 0 0;">{{ p.title }}</h3>
             <p style="color:var(--muted-navy);font-size:0.95rem;line-height:1.6;margin:0;">{{ p.desc }}</p>
@@ -665,7 +665,7 @@ class Component extends DCLogic {
     const L = this.state.lang==='pt'?'pt':'en';
     const loc=(v)=>{ if(Array.isArray(v)) return v.map(loc); if(v && typeof v==='object'){ if('en' in v && 'pt' in v) return v[L]!=null?v[L]:v.en; const o={}; for(const k in v) o[k]=loc(v[k]); return o; } return v; };
     const P = loc(D); const self=this;
-    const projects=(P.projects||[]).map(p=>{ const q={ ...p, isVoice:p.type==='voice' }; q.showMetrics=!q.image && Array.isArray(q.metrics) && q.metrics.length>0; q.panelLabel=q.isVoice ? ('Brasitech · '+((P.ui&&P.ui.aiVoice)||'')) : (L==='pt'?'Plataforma de IA':'AI Platform'); if(q.arch&&q.arch.nodes) q.arch={ ...q.arch, nodes:q.arch.nodes.map((n,i,a)=>({ ...n, notLast:i<a.length-1 })) }; q.open=()=>self.openProject(q); q.openKey=(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); self.openProject(q); } }; return q; });
+    const projects=(P.projects||[]).map(p=>{ const q={ ...p, isVoice:p.type==='voice' }; q.showMetrics=!q.image && Array.isArray(q.metrics) && q.metrics.length>0; q.panelLabel=q.kind ? q.kind : q.isVoice ? ('Brasitech · '+((P.ui&&P.ui.aiVoice)||'')) : (L==='pt'?'Plataforma de IA':'AI Platform'); if(q.arch&&q.arch.nodes) q.arch={ ...q.arch, nodes:q.arch.nodes.map((n,i,a)=>({ ...n, notLast:i<a.length-1 })) }; q.open=()=>self.openProject(q); q.openKey=(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); self.openProject(q); } }; return q; });
     const arch=(P.architecture||[]).map((a,i,arr)=>({ ...a, num:('0'+(i+1)).slice(-2), notLast: i<arr.length-1 }));
     const rwArr=(P.ui&&P.ui.resultsWords)||[]; const rotWord=rwArr.length?rwArr[(this.state.rotIdx||0)%rwArr.length]:'';
     const active='background:var(--blue);color:#fff;border:none;border-radius:100px;padding:6px 15px;font-family:var(--mono);font-size:0.74rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.25s var(--ease);';
@@ -677,7 +677,7 @@ class Component extends DCLogic {
       capabilities:P.capabilities||[], architecture:arch, aiml:P.aiml||[],
       results:P.results||[], rotWord, experience:P.experience||[], education:P.education||[], projects,
       featured:projects.find(x=>x.type==='platform')||null,
-      voiceProjects:projects.filter(x=>x.type==='voice'), dataProjects:projects.filter(x=>x.type==='image'),
+      voiceProjects:projects.filter(x=>x.type==='voice'||x.type==='dark'), dataProjects:projects.filter(x=>x.type==='image'),
       modal:this.state.modal, closeProject:this.closeProject, stop:this.stop, handleSubmit:this.handleSubmit,
       enOn:()=>this.setLang('en'), ptOn:()=>this.setLang('pt'),
       enBtn: L==='en'?active:idle, ptBtn: L==='pt'?active:idle
