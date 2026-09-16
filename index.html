@@ -37,6 +37,7 @@
     #top{min-height:auto!important;padding-top:104px!important;padding-bottom:52px!important}
     nav[data-nav]>div{padding-left:18px!important;padding-right:18px!important;grid-template-columns:1fr auto!important;gap:12px!important}
     nav[data-nav]>div>div:last-child{display:none!important}
+    .r-abstats{gap:12px!important}
     .r-p{padding:24px!important}
     .r-herocard{left:10px!important;right:auto!important;bottom:12px!important;padding:12px 16px!important}
     .r-modal{height:auto!important;max-height:92vh!important;overflow-y:auto!important}
@@ -132,84 +133,15 @@
           <p style="margin:0;">{{ ui.aboutP1 }}</p>
           <p style="margin:0;">{{ ui.aboutP2 }}</p>
         </div>
-        <div data-reveal data-delay="3" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;">
+        <div data-reveal data-delay="3" class="r-abstats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;padding-top:28px;border-top:1px solid var(--line);max-width:620px;">
+          <sc-for list="{{ aboutStats }}" as="as" hint-placeholder-count="3"><div><div style="font-size:1.85rem;font-weight:800;letter-spacing:-0.02em;line-height:1;color:var(--blue);">{{ as.v }}</div><div style="font-family:var(--mono);font-size:0.64rem;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-top:8px;line-height:1.45;">{{ as.l }}</div></div></sc-for>
+        </div>
+        <div data-reveal data-delay="4" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;">
           <sc-for list="{{ aboutChips }}" as="ch" hint-placeholder-count="4"><span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.04em;color:var(--ink);border:1px solid var(--line);border-radius:100px;padding:7px 15px;background:var(--bg-alt);">{{ ch }}</span></sc-for>
         </div>
-        <div data-reveal data-delay="4" style="margin-top:30px;">
+        <div data-reveal data-delay="5" style="margin-top:30px;">
           <a href="assets/cv.pdf" download="CV_Marcelo_Brasiliense_2026.pdf" style="display:inline-flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none;font-weight:600;font-size:0.9rem;border-bottom:1.5px solid var(--blue);padding-bottom:3px;transition:color 0.25s var(--ease);" style-hover="color:var(--blue)"><span style="font-family:'Material Symbols Outlined';font-size:1.15rem;color:var(--blue);">download</span> {{ ui.cv }}</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="capabilities" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
-    <div style="max-width:1240px;margin:0 auto;">
-      <div style="max-width:680px;margin-bottom:56px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">02</span>{{ ui.capEyebrow }}</div>
-        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.capHeading }}</h2>
-        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.capSub }}</p>
-      </div>
-      <div class="r-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;">
-        <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="6">
-          <div data-reveal data-delay="{{ $index }}" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:15px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);" style-hover="transform:translateY(-6px);border-color:var(--blue);box-shadow:0 22px 50px rgba(8,26,51,0.12)">
-            <span style="width:52px;height:52px;border-radius:13px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:28px;">{{ c.icon }}</span>
-            <h3 style="font-size:1.2rem;font-weight:700;letter-spacing:-0.01em;margin:6px 0 0;color:var(--ink);">{{ c.title }}</h3>
-            <p style="color:var(--muted);font-size:0.94rem;line-height:1.62;margin:0;">{{ c.desc }}</p>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px;">
-              <sc-for list="{{ c.tags }}" as="tg" hint-placeholder-count="3"><span style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.04em;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 10px;">{{ tg }}</span></sc-for>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section id="architecture" style="position:relative;z-index:1;padding:120px 32px;background:var(--bg-alt);border-bottom:1px solid var(--line);overflow:hidden;">
-    <div style="max-width:1240px;margin:0 auto;">
-      <div style="max-width:700px;margin-bottom:56px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">03</span>{{ ui.archEyebrow }}</div>
-        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.archHeading }}</h2>
-        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.archSub }}</p>
-      </div>
-      <div class="arch-flow" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;">
-        <sc-for list="{{ architecture }}" as="st" hint-placeholder-count="5">
-          <div data-reveal data-delay="{{ $index }}" class="arch-node" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 18px;display:flex;flex-direction:column;gap:11px;transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease);" style-hover="transform:translateY(-6px);box-shadow:0 22px 50px rgba(8,26,51,0.12);border-color:var(--blue)">
-            <div style="display:flex;align-items:center;justify-content:space-between;">
-              <span style="width:46px;height:46px;border-radius:12px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:25px;">{{ st.icon }}</span>
-              <span style="font-family:var(--mono);font-size:0.72rem;color:var(--faint);letter-spacing:0.06em;">{{ st.num }}</span>
-            </div>
-            <div style="font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:-0.01em;">{{ st.stage }}</div>
-            <div style="font-size:0.82rem;color:var(--muted);line-height:1.45;">{{ st.desc }}</div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px;">
-              <sc-for list="{{ st.items }}" as="it" hint-placeholder-count="3"><span style="font-family:var(--mono);font-size:0.66rem;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 8px;">{{ it }}</span></sc-for>
-            </div>
-          </div>
-          <sc-if value="{{ st.notLast }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" class="arch-arrow" style="display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Material Symbols Outlined';font-size:24px;">arrow_forward</span></sc-if>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section id="aiml" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
-    <div style="max-width:1240px;margin:0 auto;">
-      <div style="max-width:720px;margin-bottom:56px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">04</span>{{ ui.aimlEyebrow }}</div>
-        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.aimlHeading }}</h2>
-        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.aimlSub }}</p>
-      </div>
-      <div class="r-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:18px;">
-        <sc-for list="{{ aiml }}" as="a" hint-placeholder-count="11">
-          <div data-reveal data-delay="{{ $index }}" style="background:#fff;border:1px solid var(--line);border-radius:15px;padding:26px;display:flex;flex-direction:column;gap:13px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);" style-hover="transform:translateY(-5px);border-color:var(--blue);box-shadow:0 20px 46px rgba(8,26,51,0.12)">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
-              <span style="width:46px;height:46px;border-radius:12px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:25px;">{{ a.icon }}</span>
-              <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);">{{ a.cat }}</span>
-            </div>
-            <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-0.01em;margin:2px 0 0;color:var(--ink);">{{ a.title }}</h3>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
-              <sc-for list="{{ a.terms }}" as="tm" hint-placeholder-count="5"><span style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.02em;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 9px;">{{ tm }}</span></sc-for>
-            </div>
-          </div>
-        </sc-for>
       </div>
     </div>
   </section>
@@ -287,6 +219,78 @@
               </div>
             </div>
           </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:680px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">02</span>{{ ui.capEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.capHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.capSub }}</p>
+      </div>
+      <div class="r-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;">
+        <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="6">
+          <div data-reveal data-delay="{{ $index }}" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:15px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);" style-hover="transform:translateY(-6px);border-color:var(--blue);box-shadow:0 22px 50px rgba(8,26,51,0.12)">
+            <span style="width:52px;height:52px;border-radius:13px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:28px;">{{ c.icon }}</span>
+            <h3 style="font-size:1.2rem;font-weight:700;letter-spacing:-0.01em;margin:6px 0 0;color:var(--ink);">{{ c.title }}</h3>
+            <p style="color:var(--muted);font-size:0.94rem;line-height:1.62;margin:0;">{{ c.desc }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px;">
+              <sc-for list="{{ c.tags }}" as="tg" hint-placeholder-count="3"><span style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.04em;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 10px;">{{ tg }}</span></sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture" style="position:relative;z-index:1;padding:120px 32px;background:var(--bg-alt);border-bottom:1px solid var(--line);overflow:hidden;">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:700px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">03</span>{{ ui.archEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.archHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.archSub }}</p>
+      </div>
+      <div class="arch-flow" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;">
+        <sc-for list="{{ architecture }}" as="st" hint-placeholder-count="5">
+          <div data-reveal data-delay="{{ $index }}" class="arch-node" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 18px;display:flex;flex-direction:column;gap:11px;transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease);" style-hover="transform:translateY(-6px);box-shadow:0 22px 50px rgba(8,26,51,0.12);border-color:var(--blue)">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="width:46px;height:46px;border-radius:12px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:25px;">{{ st.icon }}</span>
+              <span style="font-family:var(--mono);font-size:0.72rem;color:var(--faint);letter-spacing:0.06em;">{{ st.num }}</span>
+            </div>
+            <div style="font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:-0.01em;">{{ st.stage }}</div>
+            <div style="font-size:0.82rem;color:var(--muted);line-height:1.45;">{{ st.desc }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px;">
+              <sc-for list="{{ st.items }}" as="it" hint-placeholder-count="3"><span style="font-family:var(--mono);font-size:0.66rem;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 8px;">{{ it }}</span></sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ st.notLast }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" class="arch-arrow" style="display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Material Symbols Outlined';font-size:24px;">arrow_forward</span></sc-if>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="aiml" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="max-width:720px;margin-bottom:56px;">
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">04</span>{{ ui.aimlEyebrow }}</div>
+        <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.aimlHeading }}</h2>
+        <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.aimlSub }}</p>
+      </div>
+      <div class="r-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:18px;">
+        <sc-for list="{{ aiml }}" as="a" hint-placeholder-count="11">
+          <div data-reveal data-delay="{{ $index }}" style="background:#fff;border:1px solid var(--line);border-radius:15px;padding:26px;display:flex;flex-direction:column;gap:13px;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);" style-hover="transform:translateY(-5px);border-color:var(--blue);box-shadow:0 20px 46px rgba(8,26,51,0.12)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+              <span style="width:46px;height:46px;border-radius:12px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Material Symbols Outlined';font-size:25px;">{{ a.icon }}</span>
+              <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);">{{ a.cat }}</span>
+            </div>
+            <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-0.01em;margin:2px 0 0;color:var(--ink);">{{ a.title }}</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
+              <sc-for list="{{ a.terms }}" as="tm" hint-placeholder-count="5"><span style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.02em;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:5px 9px;">{{ tm }}</span></sc-for>
+            </div>
+          </div>
         </sc-for>
       </div>
     </div>
