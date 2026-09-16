@@ -108,10 +108,12 @@
     </div>
   </section>
 
-  <div aria-hidden="true" style="position:relative;z-index:1;background:var(--navy);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);">
-    <div style="display:flex;width:max-content;animation:marquee-scroll 30s linear infinite;">
+  <div aria-hidden="true" style="position:relative;z-index:1;background:var(--navy);overflow:hidden;">
+    <div style="display:flex;width:max-content;animation:marquee-scroll 30s linear infinite;will-change:transform;transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;">
       <sc-for list="{{ techMarquee }}" as="t" hint-placeholder-count="28"><span style="display:inline-flex;align-items:center;gap:24px;padding:18px 26px;font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-navy);white-space:nowrap;">{{ t }}<span style="width:5px;height:5px;background:var(--blue-bright);transform:rotate(45deg);display:inline-block;"></span></span></sc-for>
     </div>
+    <div style="position:absolute;top:0;bottom:0;left:0;width:7%;background:linear-gradient(to right,var(--navy),transparent);pointer-events:none;"></div>
+    <div style="position:absolute;top:0;bottom:0;right:0;width:7%;background:linear-gradient(to left,var(--navy),transparent);pointer-events:none;"></div>
   </div>
 
   <section id="about" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
@@ -268,9 +270,11 @@
       <div class="r-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;">
         <sc-for list="{{ dataProjects }}" as="p" hint-placeholder-count="5">
           <article data-projcard data-reveal data-delay="{{ $index }}" onClick="{{ p.open }}" onKeyDown="{{ p.openKey }}" tabindex="0" role="button" aria-label="{{ p.title }}" style="overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;cursor:pointer;display:flex;flex-direction:column;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);">
-            <div style="overflow:hidden;aspect-ratio:16/10;background:var(--bg-alt);border-bottom:1px solid var(--line);">
-              <sc-if value="{{ p.image }}" hint-placeholder-val="{{ false }}"><img data-media data-src="{{ p.image }}" alt="{{ p.title }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s var(--ease);"></sc-if>
-            </div>
+            <sc-if value="{{ p.image }}" hint-placeholder-val="{{ false }}">
+              <div style="overflow:hidden;aspect-ratio:16/10;background:var(--bg-alt);border-bottom:1px solid var(--line);">
+                <img data-media data-src="{{ p.image }}" alt="{{ p.title }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s var(--ease);">
+              </div>
+            </sc-if>
             <div style="padding:24px;display:flex;flex-direction:column;gap:11px;flex:1;">
               <div style="display:flex;align-items:center;justify-content:space-between;">
                 <span style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.1em;color:var(--blue);">{{ p.num }}</span>
