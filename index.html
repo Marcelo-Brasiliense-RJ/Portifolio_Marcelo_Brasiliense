@@ -24,6 +24,7 @@
   @keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   @keyframes pulse-dot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.5);opacity:0.5}}
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  [data-nav] a.nav-on{color:var(--blue)!important;font-weight:600}
   @media (max-width:900px){.arch-flow{grid-template-columns:1fr!important}.arch-flow .arch-arrow{transform:rotate(90deg);justify-self:center;padding:2px 0}}
 
     /* ===================== RESPONSIVO (mobile Android/iOS) ===================== */
@@ -625,6 +626,7 @@ class Component extends DCLogic {
     this._counts=[...root.querySelectorAll('[data-count]')];
     if(!rm) this._counts.forEach(el=>{ el.textContent='0'; }); else this._counts.forEach(el=>{ el._done=true; });
     const nav=root.querySelector('[data-nav]');
+    this._navlinks=[...root.querySelectorAll('[data-nav] a[href^="#"]')];
     const prog=root.querySelector('[data-progress]');
     this._parallax=[...root.querySelectorAll('[data-parallax]')];
     this._tick=()=>{
@@ -632,6 +634,11 @@ class Component extends DCLogic {
       const y=window.scrollY;
       if(nav) nav.style.boxShadow = y>30 ? '0 10px 40px rgba(8,26,51,0.10)' : 'none';
       if(prog){ const H=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(H>0?(y/H*100):0)+'%'; }
+      if(this._navlinks&&this._navlinks.length){
+        const marca=y+90; let atual='';
+        this._navlinks.forEach(a=>{ const alvo=document.getElementById(a.getAttribute('href').slice(1)); if(alvo && alvo.offsetTop<=marca) atual=a.getAttribute('href'); });
+        this._navlinks.forEach(a=>a.classList.toggle('nav-on', a.getAttribute('href')===atual));
+      }
       if(!rm){
         this._parallax.forEach(el=>{ const f=parseFloat(el.dataset.parallax)||0; const r=el.getBoundingClientRect(); const c=r.top+r.height/2-window.innerHeight/2; el.style.transform=`translateY(${(-c*f).toFixed(1)}px)`; });
         this._revealInView();
