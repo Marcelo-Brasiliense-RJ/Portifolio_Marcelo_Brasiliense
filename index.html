@@ -149,7 +149,7 @@
   <section id="work" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="max-width:640px;margin-bottom:52px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">05</span>{{ ui.workEyebrow }}</div>
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">02</span>{{ ui.workEyebrow }}</div>
         <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0;color:var(--ink);">{{ ui.workHeading }}</h2>
       </div>
       <sc-if value="{{ featured }}" hint-placeholder-val="{{ false }}">
@@ -199,6 +199,10 @@
           </article>
         </sc-for>
       </div>
+      <div data-reveal style="margin:58px 0 26px;padding-top:34px;border-top:1px solid var(--line);">
+        <div style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);">{{ ui.otherWorkEyebrow }}</div>
+        <h3 style="font-size:clamp(1.3rem,2.1vw,1.7rem);font-weight:800;letter-spacing:-0.02em;margin:12px 0 0;color:var(--ink);">{{ ui.otherWorkHeading }}</h3>
+      </div>
       <div class="r-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;">
         <sc-for list="{{ dataProjects }}" as="p" hint-placeholder-count="5">
           <article data-projcard data-reveal data-delay="{{ $index }}" onClick="{{ p.open }}" onKeyDown="{{ p.openKey }}" tabindex="0" role="button" aria-label="{{ p.title }}" style="overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;cursor:pointer;display:flex;flex-direction:column;transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);">
@@ -227,7 +231,7 @@
   <section id="capabilities" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="max-width:680px;margin-bottom:56px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">02</span>{{ ui.capEyebrow }}</div>
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">03</span>{{ ui.capEyebrow }}</div>
         <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.capHeading }}</h2>
         <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.capSub }}</p>
       </div>
@@ -249,7 +253,7 @@
   <section id="architecture" style="position:relative;z-index:1;padding:120px 32px;background:var(--bg-alt);border-bottom:1px solid var(--line);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="max-width:700px;margin-bottom:56px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">03</span>{{ ui.archEyebrow }}</div>
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">04</span>{{ ui.archEyebrow }}</div>
         <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.archHeading }}</h2>
         <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.archSub }}</p>
       </div>
@@ -275,7 +279,7 @@
   <section id="aiml" style="position:relative;z-index:1;padding:120px 32px;border-bottom:1px solid var(--line);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="max-width:720px;margin-bottom:56px;">
-        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">04</span>{{ ui.aimlEyebrow }}</div>
+        <div data-reveal style="font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;"><span style="color:var(--faint);margin-right:12px;">05</span>{{ ui.aimlEyebrow }}</div>
         <h2 data-reveal data-delay="1" style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 14px;color:var(--ink);">{{ ui.aimlHeading }}</h2>
         <p data-reveal data-delay="2" style="color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0;">{{ ui.aimlSub }}</p>
       </div>

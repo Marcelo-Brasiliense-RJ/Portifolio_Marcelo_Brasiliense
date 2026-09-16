@@ -42,6 +42,8 @@ window.PORTFOLIO = {
     platform:{en:"Platform",pt:"Plataforma"},
     workEyebrow:{en:"Selected Work",pt:"Trabalhos selecionados"},
     workHeading:{en:"Automation & AI that ships.",pt:"Automação & IA que entrega."},
+    otherWorkEyebrow:{en:"Also Delivered",pt:"Também entregue"},
+    otherWorkHeading:{en:"Other projects — data, BI and process automation.",pt:"Outros projetos — dados, BI e automação de processos."},
     explore:{en:"Explore project",pt:"Ver projeto"},
     aiVoice:{en:"AI Voice",pt:"Voz IA"},
     expEyebrow:{en:"Experience",pt:"Experiência"},
